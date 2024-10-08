@@ -1,38 +1,55 @@
 <header class="header">
-<a href="/" class="header__logo">Holla@Hollywood</a>
-<nav class="header__nav">
+  <a href="/" class="header__logo">Holla@Hollywood</a>
+  <nav class="header__nav">
     <ul>
-<li>
-    <a href="/" class="">Home</a>
-</li>
-<li>
-    <a href="/" class="">About</a>
-</li>
-<li>
-    <a href="/" class="">Contact</a>
-</li>
+        <% if (user?.admin) { %>
+        <li>
+            <a href="/createPost" class="">Create Post</a>
+        </li>
+        <% } %>
+      <li>
+        <a href="/" class="">Home</a>
+      </li>
+      <li>
+        <a href="/about" class="">About</a>
+      </li>
+      <li>
+        <a href="/whatsHot" class="">What's hot</a>
+      </li>
+      <li>
+        <a href="/" class="">Contact</a>
+      </li>
+      <% if (user) { %>
+        <li>
+            <a href="/" class="">Sign Out</a>
+        </li>
+    <% } else { %>
+        <li>
+            <a href="/auth/sign-in" class="">Sign In</a>
+        </li>
+        <li>
+            <a href="/auth/sign-up" class="">Sign Up</a>
+        </li>
+    <% } %>
     </ul>
-
-</nav>
-<div class="header__button">
+  </nav>
+  <div class="header__button">
     <button class="searchBtn" aria-expanded="false">
       search
-      <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      width="24" 
-      height="24" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      stroke-width="2" 
-      stroke-linecap="round" 
-      stroke-linejoin="round">
-      <circle cx="11" cy="11" r="8" />
-      <line x1="21" y1="21" x2="15" y2="15" />
-  </svg>
-  
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="15" y2="15" />
+      </svg>
     </button>
-
-</div>
-
+  </div>
 </header>
