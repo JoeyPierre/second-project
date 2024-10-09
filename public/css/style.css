@@ -19,7 +19,7 @@ body {
     color: black;
     font-size: var(--font-size-base);
     background-color: #FAF5EE;
-    background-image: url("/img");
+    background-image: url("/img/IMG_3890.jpeg");
     margin: 0;
 }
 a { color: var(--black);}
@@ -64,7 +64,7 @@ img {
     padding: 0 10px;
 }
 .main {
-    padding 20px 0;
+    padding: 20px 0;
 }
 .hero-image {
     max-height: 528px;
@@ -275,4 +275,10 @@ img {
         display: flex;
         justify-content: space-between;
         padding: 10px 0;
+    }
+
+    .post-images {
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
     }

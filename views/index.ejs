@@ -7,12 +7,15 @@
 <section class="articles">
     <h2 class="author__heading">Latest Posts</h2>
     <ul class="article-ul">
-        <li>
-            <a href="#">
-                <span>Post Title</span>
-                <span class="article-list__date">Date</span>
+        <% posts.forEach(post => { %>
+         <li>
+            <a href="/posts/<%-post._id %>">
+                <span><%-post.title %></span>
+                <img src="<%= post.image %>" alt="<%= post.title %>" class="post-images">
+                <span class="article-list__date"><%-post.createdAt%></span>
             </a>
         </li>
+        <% }) %>
     </ul>
     <a href="#" class="pagination">&lt;View Older Post</a>
 </section>

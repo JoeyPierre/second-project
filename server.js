@@ -6,6 +6,7 @@ const expresslayout = require('express-ejs-layouts');
 const connectDB = require('./server/config/db.js')
 const mainRoutes = require('./server/routes/main')
 const authRoutes = require("./server/routes/auth.js")
+const postRoutes = require("./server/routes/post.js")
 const app =express();
 const methodOverride = require('method-override');
 const session = require('express-session');
@@ -33,6 +34,7 @@ app.set('view engine', 'ejs');
 
  app.use('/', mainRoutes);
  app.use('/auth', authRoutes);
+ app.use('/posts', postRoutes);
  
  app.listen(PORT, ()=>{
     console.log(`app listening pn port ${PORT}`);
