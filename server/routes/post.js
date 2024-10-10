@@ -52,4 +52,35 @@ router.post("/:postId/comments", async (req, res) => {
   }
 });
 
+router.get("/:postId/edit", async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.postId)
+        res.render("posts/edit.ejs", {post})
+    } catch (error) {
+        console.log(error);
+        res.redirect("/");
+    }
+})
+
+router.put("/:postId", async (req, res) => {
+    try {
+        const {postId} = req.params
+        await Post.findByIdAndUpdate(postId, req.body)
+        res.redirect(`/posts/${postId}`)
+    } catch (error) {
+        console.log(error);
+        res.redirect("/"); 
+    }
+})
+
+router.delete("/:postId", async (req, res) => {
+    try {
+        await Post.findByIdAndDelete(req.params.postId)
+        res.redirect("/")
+    } catch (error) {
+        console.log(error);
+        res.redirect("/");
+    }
+})
+
 module.exports = router;
